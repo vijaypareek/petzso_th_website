@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="public/favicon.svg">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PetzSo",
+    "url": "https://www.petzso.com/",
+    "logo": "https://www.petzso.com/public/PetzSo_Logo_web.svg",
+    "sameAs": [
+      "https://instagram.com/yourpetzso",
+      "https://linkedin.com/company/petzso"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "PetzSo",
+    "operatingSystem": "iOS",
+    "applicationCategory": "LifestyleApplication",
+    "url": "https://www.petzso.com/",
+    "installUrl": "https://apps.apple.com/app/6749522264",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <title>PetzSo - Everything your pet needs, right around you</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FF8A00',
+            secondary: '#4ECDC4',
+            accent: '#45B7D1',
+            background: '#FEFEFE',
+            foreground: '#1A1A1A',
+            card: '#F8F9FA',
+            'muted-foreground': '#6B7280',
+            border: '#E5E7EB'
+          },
+          fontFamily: {
+            'space-grotesk': ['Space Grotesk', 'sans-serif'],
+            'dm-sans': ['DM Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'DM Sans', sans-serif; scroll-behavior: smooth; }
+    .font-space-grotesk { font-family: 'Space Grotesk', sans-serif; }
+    .accordion-content { display: none; }
+    .accordion-content.active { display: block; }
+    .accordion-trigger.active .accordion-icon { transform: rotate(180deg); }
+    .accordion-icon { transition: transform 0.2s ease; }
+  </style>
+
+  <meta name="description" content="PetzSo helps pet parents find trusted pet services, pet-friendly places, events, and essentials nearby — all in one app." />
+  <meta name="keywords" content="pet services, pet friendly cafes, vets near me, dog grooming, pet events, pet stores, pet parents app, Petzso" />
+  <meta name="author" content="Petzso" />
+  <link rel="canonical" href="https://www.petzso.com/" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Petzso" />
+  <meta property="og:title" content="Petzso — Everything your pet needs, right around you" />
+  <meta property="og:description" content="Find trusted pet services, pet-friendly places, events, and essentials nearby — all in one app." />
+  <meta property="og:url" content="https://www.petzso.com/" />
+  <meta property="og:image" content="https://www.petzso.com/public/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Petzso — Everything your pet needs, right around you" />
+  <meta name="twitter:description" content="Find trusted pet services, pet-friendly places, events, and essentials nearby — all in one app." />
+  <meta name="twitter:image" content="https://www.petzso.com/public/og-cover.jpg" />
+
+  <meta name="apple-itunes-app" content="app-id=6749522264" />
+  <meta name="google-play-app" content="app-id=com.petzso.petsoapp">
+  <meta name="theme-color" content="#FF8A00" />
+  <link rel="preload" as="image" href="/public/PetzSo_Logo_web.svg" />
+</head>
+
+<body class="min-h-screen bg-background text-foreground">
+
+  <!-- Navigation Header -->
+  <header class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur border-b border-border px-4 py-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="flex items-center space-x-2">
+        <img src="public/PetzSo_Logo_web.svg" alt="PetzSo" class="h-14 w-auto" />
+      </a>
+
+      <nav class="hidden sm:flex gap-6 text-[15px] font-medium">
+        <a href="#what" class="text-muted-foreground hover:text-primary transition-colors">What is PetzSo</a>
+        <a href="#why" class="text-muted-foreground hover:text-primary transition-colors">Why PetzSo</a>
+        <a href="#screens" class="text-muted-foreground hover:text-primary transition-colors">See the App</a>
+         <a href="bangkok-pet-directory.html" class="text-muted-foreground hover:text-primary transition-colors">Bangkok Guide</a>
+        <a href="#business" class="text-muted-foreground hover:text-primary transition-colors">List Your Business</a>
+        <a href="#faq" class="text-muted-foreground hover:text-primary transition-colors">FAQ</a>
+        <a href="#about" class="text-muted-foreground hover:text-primary transition-colors">Founders</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="px-4 py-16 text-center">
+    <div class="max-w-4xl mx-auto space-y-8">
+      <h1 class="font-space-grotesk font-bold text-4xl md:text-6xl lg:text-7xl text-foreground">
+        Everything your pet needs, <span class="text-primary">right around you</span>
+      </h1>
+
+      <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+        Find trusted pet services, pet-friendly places, events, and essentials nearby — all in one app.
+      </p>
+    </div>
+
+    <div class="mt-10 flex items-center justify-center gap-4">
+      <a
+        href="https://apps.apple.com/app/6749522264"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Download PetzSo on the App Store"
+        class="transition hover:opacity-90"
+      >
+        <img
+          src="public/appstore-black.svg"
+          alt="Download on the App Store"
+          class="h-[54px] md:h-[58px] w-auto"
+        />
+      </a>
+
+      <a
+        href="https://play.google.com/store/apps/details?id=com.petzso.petsoapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Get PetzSo on Google Play"
+        class="transition hover:opacity-90"
+      >
+        <img
+          src="public/googleplay.png"
+          alt="Get it on Google Play"
+          class="h-[54px] md:h-[58px] w-auto"
+        />
+      </a>
+    </div>
+  </section>
+
+  <!-- What is PetzSo -->
+  <section id="what" class="px-4 py-16 bg-card">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 font-space-grotesk">
+          What is PetzSo?
+        </h2>
+
+        <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          PetzSo is an app that helps pet parents find trusted pet services, pet-friendly places, events, and essentials nearby.
+          Everything is in one place, so you don’t have to rely on random searches, scattered information, or unverified recommendations.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div class="text-center bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-6">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 font-space-grotesk">Find trusted pet services</h3>
+          <p class="text-muted-foreground">
+            Discover nearby vets, groomers, trainers, walkers, boarding services, and more — easy to contact and simple to compare.
+          </p>
+        </div>
+
+        <div class="text-center bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-6">
+          <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 font-space-grotesk">Book appointments easily</h3>
+          <p class="text-muted-foreground">
+            Check details, view availability, and book pet services directly through the app — without the usual back and forth.
+          </p>
+        </div>
+
+        <div class="text-center bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow p-6 sm:col-span-2 lg:col-span-1">
+          <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 font-space-grotesk">Explore places and events</h3>
+          <p class="text-muted-foreground">
+            Find pet-friendly cafés, parks, events, and hangout spots near you — all curated for your city.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why PetzSo -->
+  <section id="why" class="px-4 py-16">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 font-space-grotesk">
+        Why PetzSo
+      </h2>
+
+      <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <svg class="w-6 h-6 text-primary mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <div>
+              <h3 class="font-semibold text-lg mb-2">Built for real pet needs</h3>
+              <p class="text-muted-foreground">
+                Designed around everyday pet decisions — not likes, feeds, or follower counts.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <svg class="w-6 h-6 text-primary mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <div>
+              <h3 class="font-semibold text-lg mb-2">Location-first discovery</h3>
+              <p class="text-muted-foreground">
+                Everything you see is relevant to where you and your pet actually are.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <svg class="w-6 h-6 text-primary mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <div>
+              <h3 class="font-semibold text-lg mb-2">All pet essentials in one app</h3>
+              <p class="text-muted-foreground">
+                Services, places, events, and products — without juggling multiple apps and random sources.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <svg class="w-6 h-6 text-primary mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <div>
+              <h3 class="font-semibold text-lg mb-2">Supports local pet businesses</h3>
+              <p class="text-muted-foreground">
+                Helping trusted local providers get discovered by pet parents nearby.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Preview -->
+  <section id="screens" class="px-4 py-16 bg-card">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-space-grotesk">
+        See the app
+      </h2>
+      <p class="text-muted-foreground mb-12">
+        A quick look at how PetzSo helps you make better pet decisions, faster.
+      </p>
+
+      <div class="grid sm:grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="space-y-4">
+          <img src="public/home_01.png" alt="PetzSo home screen" class="mx-auto rounded-2xl shadow-lg max-w-full h-auto">
+          <p class="text-sm text-muted-foreground">Discover what’s nearby</p>
+        </div>
+        <div class="space-y-4">
+          <img src="public/pet_profile.png" alt="PetzSo pet profile" class="mx-auto rounded-2xl shadow-lg max-w-full h-auto">
+          <p class="text-sm text-muted-foreground">Manage multiple pets easily</p>
+        </div>
+        <div class="space-y-4">
+          <img src="public/pet_friendly_places.png" alt="PetzSo places map" class="mx-auto rounded-2xl shadow-lg max-w-full h-auto">
+          <p class="text-sm text-muted-foreground">Explore pet-friendly places</p>
+        </div>
+        <div class="space-y-4">
+          <img src="public/events.png" alt="PetzSo events screen" class="mx-auto rounded-2xl shadow-lg max-w-full h-auto">
+          <p class="text-sm text-muted-foreground">Find local pet events</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Section -->
+  <section id="business" class="px-4 py-16">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-space-grotesk">
+          Own a pet business? PetzSo helps you get discovered too.
+        </h2>
+        <p class="text-lg md:text-xl text-muted-foreground">
+          Already listed on PetzSo? Claim it and update your details. </br> Not listed yet? Add your business and get started.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+        <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-8">
+          <div class="space-y-6">
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+              <span>Get discovered by nearby pet parents</span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+              <span>List your business in a few simple steps</span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+              <span>Update your details anytime</span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+              <span>Add services or products when you’re ready</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center gap-4">
+            <a
+              href="business.html"
+              class="inline-flex w-full max-w-xs items-center justify-center rounded-full bg-primary px-8 py-3 text-white font-medium hover:bg-primary/90 transition-colors"
+            >
+              List or Claim Your Business
+            </a>
+
+            <a
+              href="business.html#contact"
+              class="inline-flex w-full max-w-xs items-center justify-center rounded-full border border-border px-8 py-3 text-foreground font-medium hover:border-primary hover:text-primary transition-colors"
+            >
+              Need Help?
+            </a>
+
+            <p class="text-sm text-muted-foreground text-center max-w-xs">
+              Quick Setup. Our team can help you through the next step.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="px-4 py-16 bg-card">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 font-space-grotesk">
+        Frequently asked questions
+      </h2>
+
+      <div class="space-y-4">
+        <div class="border border-border rounded-lg px-6">
+          <button class="accordion-trigger w-full text-left py-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+            <span class="font-medium">Is PetzSo free?</span>
+            <svg class="accordion-icon w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <polyline points="6,9 12,15 18,9"></polyline>
+            </svg>
+          </button>
+          <div class="accordion-content pb-4">
+            <p class="text-muted-foreground">
+              Yes. PetzSo is free for pet parents. It helps users discover trusted pet services, places, events, and essentials nearby, while also helping local businesses get discovered.
+            </p>
+          </div>
+        </div>
+
+        <div class="border border-border rounded-lg px-6">
+          <button class="accordion-trigger w-full text-left py-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+            <span class="font-medium">Can I use it with multiple pets?</span>
+            <svg class="accordion-icon w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <polyline points="6,9 12,15 18,9"></polyline>
+            </svg>
+          </button>
+          <div class="accordion-content pb-4">
+            <p class="text-muted-foreground">
+              Yes. You can create profiles for multiple pets and manage their appointments and activity from one account.
+            </p>
+          </div>
+        </div>
+
+        <div class="border border-border rounded-lg px-6">
+          <button class="accordion-trigger w-full text-left py-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+            <span class="font-medium">Which cities are covered?</span>
+            <svg class="accordion-icon w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <polyline points="6,9 12,15 18,9"></polyline>
+            </svg>
+          </button>
+          <div class="accordion-content pb-4">
+            <p class="text-muted-foreground">
+              PetzSo is currently live in major cities across India and Thailand, with more locations being added gradually.
+            </p>
+          </div>
+        </div>
+
+        <div class="border border-border rounded-lg px-6">
+          <button class="accordion-trigger w-full text-left py-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+            <span class="font-medium">How do I join as a business?</span>
+            <svg class="accordion-icon w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <polyline points="6,9 12,15 18,9"></polyline>
+            </svg>
+          </button>
+          <div class="accordion-content pb-4">
+            <p class="text-muted-foreground">
+              Businesses can request to list or claim their business through our business page. Our team reviews the request and helps guide the next step.
+              <a href="business.html" class="text-primary underline hover:opacity-80 transition-opacity">List or claim your business</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="border border-border rounded-lg px-6">
+          <button class="accordion-trigger w-full text-left py-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+            <span class="font-medium">How do I contact PetzSo support?</span>
+            <svg class="accordion-icon w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <polyline points="6,9 12,15 18,9"></polyline>
+            </svg>
+          </button>
+          <div class="accordion-content pb-4">
+            <p class="text-muted-foreground">
+              If you need help with your PetzSo account, you can reach us on WhatsApp, LINE, or email.
+            </p>
+            <p class="text-muted-foreground">
+              WhatsApp: +91 99583 16056 or +91 96027 72207 | LINE: @464aczsl | Email: support@petzso.com
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founders -->
+  <section id="about" class="px-4 py-16">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6 font-space-grotesk">
+        About the founders
+      </h2>
+
+      <p class="text-lg text-muted-foreground leading-relaxed">
+        Founded by <strong>Vijay &amp; Prashant</strong>, two friends and fellow pet parents building the app they wish existed. After struggling to find pet-friendly places, reliable pet services, and trustworthy local information in one place, they decided to create PetzSo for pet families everywhere.
+      </p>
+
+      <div class="mt-10 grid sm:grid-cols-2 gap-8">
+        <!-- Vijay -->
+        <div class="bg-card border border-border rounded-2xl p-6 flex flex-col items-center text-center shadow-sm">
+          <img
+            src="public/vijay.png"
+            alt="Vijay - Co-founder at PetzSo"
+            class="w-28 h-28 rounded-full object-cover mb-4 border-4 border-white shadow-md"
+          />
+          <h3 class="text-lg font-semibold font-space-grotesk">Vijay</h3>
+          <p class="text-sm text-primary font-medium mt-1">Co-founder · Product & Community</p>
+          <p class="text-sm text-muted-foreground mt-3">
+            Vijay leads product design, user experience, and community building, making sure PetzSo stays genuinely useful for urban pet parents.
+          </p>
+          <a
+            href="https://www.linkedin.com/in/vijaypareekbkk"
+            target="_blank"
+            class="mt-4 inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.7v2.3h.1c.5-.9 1.7-1.8 3.5-1.8 3.7 0 4.4 2.4 4.4 5.6V24h-4v-8.5c0-2 0-4.5-2.7-4.5s-3.1 2.1-3.1 4.3V24h-4V8z"/>
+            </svg>
+            <span>View on LinkedIn</span>
+          </a>
+        </div>
+
+        <!-- Prashant -->
+        <div class="bg-card border border-border rounded-2xl p-6 flex flex-col items-center text-center shadow-sm">
+          <img
+            src="public/prashant.jpg"
+            alt="Prashant - Co-founder at PetzSo"
+            class="w-28 h-28 rounded-full object-cover mb-4 border-4 border-white shadow-md"
+          />
+          <h3 class="text-lg font-semibold font-space-grotesk">Prashant</h3>
+          <p class="text-sm text-primary font-medium mt-1">Co-founder · Technology & Operations</p>
+          <p class="text-sm text-muted-foreground mt-3">
+            Prashant leads the technology and operations behind PetzSo, helping make listings, discovery, and bookings work reliably for both pet parents and businesses.
+          </p>
+          <a
+            href="https://www.linkedin.com/in/prashant-gupta-941836359/"
+            target="_blank"
+            class="mt-4 inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.7v2.3h.1c.5-.9 1.7-1.8 3.5-1.8 3.7 0 4.4 2.4 4.4 5.6V24h-4v-8.5c0-2 0-4.5-2.7-4.5s-3.1 2.1-3.1 4.3V24h-4V8z"/>
+            </svg>
+            <span>View on LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      const form = document.getElementById('waitlistForm');
+      const btn = document.getElementById('waitlistBtn');
+      const successEl = document.getElementById('waitlistSuccess');
+      const errorEl = document.getElementById('waitlistError');
+
+      if (!form) return;
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        successEl.classList.add('hidden');
+        errorEl.classList.add('hidden');
+
+        btn.disabled = true;
+        btn.classList.add('opacity-70', 'cursor-not-allowed');
+
+        try {
+          const res = await fetch(form.action, {
+            method: form.method,
+            headers: { 'Accept': 'application/json' },
+            body: new FormData(form)
+          });
+
+          if (res.ok) {
+            form.reset();
+            successEl.classList.remove('hidden');
+          } else {
+            errorEl.classList.remove('hidden');
+          }
+        } catch (err) {
+          errorEl.classList.remove('hidden');
+        } finally {
+          btn.disabled = false;
+          btn.classList.remove('opacity-70', 'cursor-not-allowed');
+        }
+      });
+    })();
+  </script>
+
+  <script>
+    function toggleAccordion(trigger) {
+      const content = trigger.nextElementSibling;
+      const isActive = content.classList.contains('active');
+
+      document.querySelectorAll('.accordion-content').forEach(item => {
+        item.classList.remove('active');
+      });
+      document.querySelectorAll('.accordion-trigger').forEach(item => {
+        item.classList.remove('active');
+      });
+
+      if (!isActive) {
+        content.classList.add('active');
+        trigger.classList.add('active');
+      }
+    }
+  </script>
+
+  <!-- Footer -->
+  <!-- <footer class="px-4 py-8 bg-card border-t border-border">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <p class="text-sm text-muted-foreground">
+        © <span id="year"></span> PetzSo. All rights reserved.
+      </p>
+
+      <div class="flex gap-6 items-center">
+        <a href="https://instagram.com/petzso_in" target="_blank" class="flex items-center justify-center text-muted-foreground hover:text-primary transition-colors">
+          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M7.5 2h9A5.5 5.5 0 0122 7.5v9a5.5 5.5 0 01-5.5 5.5h-9A5.5 5.5 0 012 16.5v-9A5.5 5.5 0 017.5 2zm0 2A3.5 3.5 0 004 7.5v9A3.5 3.5 0 007.5 20h9a3.5 3.5 0 003.5-3.5v-9A3.5 3.5 0 0016.5 4h-9zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm5.75-.25a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"/>
+          </svg>
+        </a>
+
+        <a href="https://linkedin.com/company/petzso" target="_blank" class="flex items-center justify-center text-muted-foreground hover:text-primary transition-colors">
+          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.7v2.3h.1c.5-.9 1.7-1.8 3.5-1.8 3.7 0 4.4 2.4 4.4 5.6V24h-4v-8.5c0-2 0-4.5-2.7-4.5s-3.1 2.1-3.1 4.3V24h-4V8z"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="flex gap-6 text-sm">
+        <a href="terms.html" class="text-muted-foreground hover:text-primary transition-colors">Terms of Use (User)</a>
+        <a href="business-terms.html" class="text-muted-foreground hover:text-primary transition-colors">Terms of Use (Business)</a>
+        <a href="privacy.html" class="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a>
+        <a href="claim-business.html" class="text-muted-foreground hover:text-primary transition-colors">Claim Business</a>
+      </div>
+    </div>
+  </footer> -->
+  <!-- Footer -->
+<footer class="px-4 py-8 bg-card border-t border-border">
+  <div class="max-w-6xl mx-auto space-y-8">
+
+    <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
+      <div>
+        <img src="public/PetzSo_Logo_web.svg" alt="PetzSo" class="h-12 w-auto mx-auto md:mx-0 mb-4" />
+
+        <p class="text-sm text-muted-foreground leading-relaxed">
+          PetzSo helps pet parents find trusted pet services, pet-friendly places, events, and essentials nearby.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold mb-4 font-space-grotesk">Explore PetzSo</h3>
+
+        <div class="space-y-3 text-sm">
+          <a href="#what" class="block text-muted-foreground hover:text-primary transition-colors">What is PetzSo</a>
+          <a href="#screens" class="block text-muted-foreground hover:text-primary transition-colors">See the App</a>
+          <a href="#business" class="block text-muted-foreground hover:text-primary transition-colors">List Your Business</a>
+          <a href="#faq" class="block text-muted-foreground hover:text-primary transition-colors">FAQ</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-semibold mb-4 font-space-grotesk">Bangkok guides</h3>
+
+        <div class="space-y-3 text-sm">
+          <a href="bangkok-pet-directory.html" class="block text-muted-foreground hover:text-primary transition-colors">Bangkok Pet Directory</a>
+          <a href="pet-friendly-places-bangkok.html" class="block text-muted-foreground hover:text-primary transition-colors">Pet-Friendly Places in Bangkok</a>
+          <a href="pet-services-bangkok.html" class="block text-muted-foreground hover:text-primary transition-colors">Pet Services in Bangkok</a>
+          <a href="vets-and-healthcare-bangkok.html" class="block text-muted-foreground hover:text-primary transition-colors">Vets & Healthcare in Bangkok</a>
+          <a href="pet-products-bangkok.html" class="block text-muted-foreground hover:text-primary transition-colors">Local Pet Products in Bangkok</a>
+          <a href="pet-events-bangkok.html" class="block text-muted-foreground hover:text-primary transition-colors">Pet Events in Bangkok</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-border pt-6 flex flex-col lg:flex-row items-center justify-between gap-4 text-center lg:text-left">
+      <p class="text-sm text-muted-foreground">
+        © <span id="year"></span> PetzSo. All rights reserved.
+      </p>
+
+      <div class="flex gap-6 items-center">
+        <a href="https://instagram.com/petzso_in" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center text-muted-foreground hover:text-primary transition-colors">
+          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M7.5 2h9A5.5 5.5 0 0122 7.5v9a5.5 5.5 0 01-5.5 5.5h-9A5.5 5.5 0 012 16.5v-9A5.5 5.5 0 017.5 2zm0 2A3.5 3.5 0 004 7.5v9A3.5 3.5 0 007.5 20h9a3.5 3.5 0 003.5-3.5v-9A3.5 3.5 0 0016.5 4h-9zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm5.75-.25a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"/>
+          </svg>
+        </a>
+
+        <a href="https://linkedin.com/company/petzso" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center text-muted-foreground hover:text-primary transition-colors">
+          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.7v2.3h.1c.5-.9 1.7-1.8 3.5-1.8 3.7 0 4.4 2.4 4.4 5.6V24h-4v-8.5c0-2 0-4.5-2.7-4.5s-3.1 2.1-3.1 4.3V24h-4V8z"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
+        <a href="terms.html" class="text-muted-foreground hover:text-primary transition-colors">Terms of Use (User)</a>
+        <a href="business-terms.html" class="text-muted-foreground hover:text-primary transition-colors">Terms of Use (Business)</a>
+        <a href="privacy.html" class="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

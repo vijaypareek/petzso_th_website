@@ -1,0 +1,823 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PetzSo Partner — Claim your business listing</title>
+  <meta
+    name="description"
+    content="Claim your PetzSo business listing, correct your details, and let nearby pet parents reach you easily. No app download needed to get started."
+  />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff;
+      --surface:#ffffff;
+      --surface-soft:#f7f7f8;
+      --surface-soft-2:#fbfbfc;
+      --text:#17181a;
+      --muted:#62656c;
+      --line:#e8e9ec;
+      --brand:#111214;
+      --brand-hover:#1c1d20;
+      --accent:#f3f4f6;
+      --success:#eef6ef;
+      --success-line:#d8ebda;
+      --danger:#fff4f4;
+      --danger-line:#f2d0d0;
+      --danger-text:#8a3131;
+      --max:1160px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max),calc(100% - 32px));margin:0 auto}
+
+    .nav-wrap{
+      position:sticky;top:0;z-index:30;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(232,233,236,.9);
+    }
+    .nav{
+      min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px;
+    }
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.02em}
+    .brand img{height:38px;width:auto}
+    .nav-links{display:flex;gap:22px;color:var(--muted);font-size:.96rem;font-weight:500}
+    .nav-links a:hover{color:var(--text)}
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:52px;padding:0 20px;border-radius:999px;font-weight:700;
+      border:1px solid transparent;transition:.18s ease;text-align:center;cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--brand);color:#fff}
+    .btn-primary:hover{background:var(--brand-hover)}
+    .btn-secondary{background:#fff;border-color:var(--line);color:var(--text)}
+    .btn-secondary:hover{border-color:#d6d9de}
+    .btn[disabled]{opacity:.65;cursor:not-allowed;transform:none}
+
+    .hero{padding:48px 0 16px}
+    .hero-inner{
+      max-width:980px;
+      margin:0 auto;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 14px;border-radius:999px;background:var(--surface-soft);
+      color:#30333a;font-weight:700;font-size:.9rem;margin-bottom:16px;
+    }
+    .eyebrow-dot{width:8px;height:8px;border-radius:50%;background:#111214}
+    h1{
+      margin:0 0 8px;
+      font-size:clamp(2.45rem,5vw,4.2rem);
+      line-height:1.1;
+      letter-spacing:-.06em;
+      max-width:20ch;
+    }
+    .hero-copy{
+      margin:0 0 20px;
+      max-width:760px;
+      color:var(--muted);
+      font-size:1.03rem;
+      line-height:1.75;
+    }
+    .hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:18px}
+    .hero-points{
+      display:flex;flex-wrap:wrap;justify-content:center;gap:10px 16px;
+      color:#40434a;font-size:.94rem;margin-bottom:24px;
+    }
+    .hero-points span{display:inline-flex;align-items:center;gap:8px}
+    .tick{
+      width:20px;height:20px;border-radius:50%;
+      background:var(--accent);display:grid;place-items:center;
+      font-size:12px;font-weight:800;
+    }
+
+    .section{padding:68px 0 0}
+    .section-head{max-width:760px;margin:0 auto 22px;text-align:center}
+    .section-head h2{
+      margin:0 0 10px;
+      font-size:clamp(2rem,4vw,2.8rem);
+      line-height:1.08;
+      letter-spacing:-.05em;
+    }
+    .section-head p{margin:0;color:var(--muted);line-height:1.7}
+
+    .cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .cards-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:0 8px 24px rgba(17,18,20,.04);
+    }
+    .card-number,.card-icon{
+      width:42px;height:42px;border-radius:14px;
+      background:var(--surface-soft);
+      display:grid;place-items:center;
+      font-weight:800;margin-bottom:16px;
+    }
+    .card h3{margin:0 0 8px;font-size:1.12rem;letter-spacing:-.03em}
+    .card p{margin:0;color:var(--muted);line-height:1.68}
+    .proof-list{margin:14px 0 0;padding-left:18px;color:var(--muted);line-height:1.7}
+
+    .band{
+      margin-top:22px;
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:var(--surface-soft-2);
+      padding:20px;
+      text-align:center;
+    }
+    .band p{margin:0 0 14px;color:#4b4f56;line-height:1.65}
+    .band-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+
+    .category-chip{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-height:52px;padding:0 16px;border-radius:16px;border:1px solid var(--line);
+      background:#fff;font-weight:700;color:#2b2e34;text-align:center;
+    }
+
+    .form-wrap{padding-top:44px}
+    .form-shell{
+      max-width:980px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:20px;
+      align-items:start;
+    }
+    .form-card, .side-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:26px;
+      box-shadow:0 8px 24px rgba(17,18,20,.04);
+    }
+    .form-card h3,.side-card h3{
+      margin:0 0 8px;
+      font-size:1.3rem;
+      letter-spacing:-.04em;
+    }
+    .form-card p,.side-card p{margin:0;color:var(--muted);line-height:1.7}
+
+    .request-form{margin-top:18px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+    .field{display:flex;flex-direction:column;gap:8px;min-width:0}
+    .field.full{grid-column:1 / -1}
+    label{font-size:.94rem;font-weight:700;color:#23262b}
+    input, select, textarea{
+      width:100%;
+      min-height:52px;
+      border:1px solid #dfe2e7;
+      border-radius:16px;
+      padding:0 16px;
+      font:inherit;
+      color:var(--text);
+      background:#fff;
+      outline:none;
+      transition:border-color .15s ease, box-shadow .15s ease;
+    }
+    textarea{
+      min-height:120px;
+      resize:vertical;
+      padding:14px 16px;
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color:#b9bec7;
+      box-shadow:0 0 0 4px rgba(17,18,20,.05);
+    }
+    .field-help{font-size:.84rem;color:var(--muted);line-height:1.55;margin-top:2px}
+
+    .form-footer{
+      display:flex;flex-direction:column;gap:12px;margin-top:16px;
+    }
+    .micro-copy{
+      font-size:.86rem;color:var(--muted);line-height:1.6;
+    }
+
+    .notice{
+      display:none;
+      margin-top:14px;
+      border-radius:18px;
+      padding:14px 16px;
+      line-height:1.65;
+      font-size:.95rem;
+    }
+    .notice.show{display:block}
+    .notice.success{background:var(--success);border:1px solid var(--success-line);color:#24532a}
+    .notice.error{background:var(--danger);border:1px solid var(--danger-line);color:var(--danger-text)}
+
+    .side-stack{display:grid;gap:16px;margin-top:18px}
+    .mini-panel{
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:18px;
+      background:var(--surface-soft-2);
+    }
+    .mini-panel strong{display:block;margin-bottom:8px;font-size:.98rem}
+    .mini-panel ul{margin:0;padding-left:18px;color:var(--muted);line-height:1.7}
+    .mini-panel p{margin:0;color:var(--muted);line-height:1.7}
+
+    .faq{max-width:900px;margin:0 auto;display:grid;gap:14px}
+    details{background:#fff;border:1px solid var(--line);border-radius:20px;padding:0 20px}
+    summary{list-style:none;cursor:pointer;font-weight:700;padding:20px 34px 20px 0;position:relative}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:'+';position:absolute;right:0;top:16px;font-size:1.5rem;color:#3d4046}
+    details[open] summary::after{content:'−'}
+    details p{margin:0 0 18px;color:var(--muted);line-height:1.7}
+
+    .contact{padding:76px 0 104px}
+    .contact-card{
+      background:#f6f7f8;
+      color:#111214;
+      border:1px solid #e7eaee;
+      border-radius:32px;
+      padding:38px 28px;
+      text-align:center;
+    }
+    .contact-card h2{margin:0 0 12px;font-size:clamp(2rem,4vw,2.8rem);line-height:1.06;letter-spacing:-.05em}
+    .contact-card p{max-width:760px;margin:0 auto 20px;color:#5f636b;line-height:1.7}
+    .contact-actions,.store-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;margin-bottom:14px}
+    .contact-actions .btn{min-width:210px}
+    .contact-help{margin-top:8px;color:#5f636b;font-size:.95rem;line-height:1.7}
+    .store-block{margin-top:24px;padding-top:22px;border-top:1px solid #e2e5ea}
+    .store-label{margin:0 0 14px;font-size:.95rem;color:#5f636b;font-weight:600}
+    .store-badge{display:inline-flex;align-items:center;justify-content:center;padding:0;min-height:auto;background:transparent;border:none;border-radius:0;box-shadow:none}
+    .store-badge img{width:170px;height:52px;object-fit:contain;display:block}
+    .contact-meta{color:#5f636b;font-size:.96rem;line-height:1.7;margin-top:6px}
+
+    .site-footer{padding:18px 16px 24px;border-top:1px solid var(--line);background:#fff}
+    .site-footer-inner{width:min(1160px, calc(100% - 0px));margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:nowrap}
+    .site-footer-copy{margin:0;font-size:.92rem;color:#7b7f86;white-space:nowrap;flex-shrink:0}
+    .site-footer-links{display:flex;align-items:center;gap:24px;white-space:nowrap;flex-shrink:0}
+    .site-footer-links a{font-size:.92rem;color:#7b7f86}
+    .site-footer-links a:hover{color:var(--text)}
+
+    .hp-field{position:absolute;left:-5000px;opacity:0;pointer-events:none;height:0;width:0;overflow:hidden}
+
+    .mobile-cta{display:none}
+
+    @media (max-width:980px){
+      .cards-3{grid-template-columns:1fr}
+      .cards-4{grid-template-columns:repeat(2,1fr)}
+      .form-shell{grid-template-columns:1fr}
+    }
+
+    @media (max-width:760px){
+      .nav-links{display:none}
+      .container{width:min(var(--max),calc(100% - 24px))}
+      .hero{padding-top:28px}
+      .hero-actions,.contact-actions,.store-row,.band-actions{flex-direction:column}
+      .hero-actions .btn,.contact-actions .btn,.store-badge,.band-actions .btn{width:100%}
+      .contact-card{padding:28px 20px}
+      .cards-4{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .mobile-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:40;padding:12px;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-top:1px solid #e7eaee}
+      .mobile-cta .btn{width:100%;min-height:54px}
+    }
+
+    @media (max-width:640px){
+      .site-footer{overflow-x:auto}
+      .site-footer-inner{min-width:max-content}
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="PetzSo Partner">
+        <img src="public/Partner_logo.png" alt="PetzSo Partner" />
+        <span>PetzSo Partner</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#request">Request form</a>
+        <a href="#why">Why claim</a>
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <h1>Claim your Business listing in minutes</h1>
+
+          <p class="hero-copy">
+            Your business may already be on PetzSo. Send a quick request, and our team will help you claim the listing or create a new one if needed.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#request">Claim or set up my business</a>
+            <a class="btn btn-secondary" href="#contact">Need help first?</a>
+          </div>
+
+          <div class="hero-points">
+            <span><span class="tick">✓</span>No app needed to start</span>
+            <span><span class="tick">✓</span>Simple request form</span>
+            <span><span class="tick">✓</span>Support on WhatsApp</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="request" class="section form-wrap">
+      <div class="container">
+        <div class="section-head">
+          <h2>Send your business request</h2>
+          <p>
+            Fill this short form. If your business is already listed, we will help you claim it. If it is new, we will help create the listing and guide you on the next step.
+          </p>
+        </div>
+
+        <div class="form-shell">
+          <div class="form-card">
+            <h3>Business request form</h3>
+            <p>Please keep it simple and accurate so our team can contact you faster.</p>
+
+            <form id="business-request-form" class="request-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+              <input type="hidden" name="access_key" value="ae1c3b4c-dd51-4ce0-b0b1-ca1a40d7bdee">
+              <input type="hidden" name="subject" value="New PetzSo business onboarding request">
+              <input type="hidden" name="from_name" value="PetzSo Partner Page">
+              <input type="hidden" name="page_source" value="partner-business-page">
+              <input type="hidden" name="submitted_at" id="submitted-at-field" value="">
+              <input type="hidden" name="form_started_at" id="form-started-at" value="">
+              <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off">
+
+              <div class="grid-2">
+                <div class="field">
+                  <label for="business_name">Business name</label>
+                  <input id="business_name" name="business_name" type="text" maxlength="120" required>
+                </div>
+
+                <div class="field">
+                  <label for="city">City</label>
+                  <input id="city" name="city" type="text" maxlength="80" required>
+                </div>
+
+                <div class="field">
+                  <label for="contact_name">Your name</label>
+                  <input id="contact_name" name="contact_name" type="text" maxlength="80" required>
+                </div>
+
+                <div class="field">
+                  <label for="phone">Your phone number</label>
+                  <input id="phone" name="phone" type="tel" inputmode="tel" maxlength="20" placeholder="e.g. 9876543210" required>
+                </div>
+
+                <div class="field">
+                  <label for="business_type">Business type</label>
+                  <select id="business_type" name="business_type" required>
+                    <option value="">Select business type</option>
+                    <option>Groomer</option>
+                    <option>Vet / Clinic</option>
+                    <option>Pet Store</option>
+                    <option>Pet Food</option>
+                    <option>Pet Healthcare/suppliments</option>
+                    <option>Boarding / Daycare</option>
+                    <option>Pet Taxi / Transport</option>
+                    <option>Trainer</option>
+                    <option>Walker / Sitter</option>
+                    <option>Pet Friendly Cafe / Venue</option>
+                    <option>Other Pet Service</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="already_listed">Is your business already on PetzSo?</label>
+                  <select id="already_listed" name="already_listed" required>
+                    <option value="">Select one</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                    <option>Not sure</option>
+                  </select>
+                </div>
+
+                <div class="field full">
+                  <label for="description">What does your business offer?</label>
+                  <textarea id="description" name="description" maxlength="600" placeholder="Example: Dog grooming, pet boarding, vet consultation, accessories, pet-friendly cafe"></textarea>
+                </div>
+
+                <div class="field">
+                  <label for="area">Area / locality</label>
+                  <input id="area" name="area" type="text" maxlength="120" placeholder="Optional">
+                </div>
+
+                <div class="field">
+                  <label for="instagram_or_website">Instagram or website</label>
+                  <input id="instagram_or_website" name="instagram_or_website" type="text" maxlength="180" placeholder="Optional">
+                </div>
+
+                <div class="field full">
+                  <label for="notes">Anything else we should know?</label>
+                  <textarea id="notes" name="notes" maxlength="800" placeholder="Optional"></textarea>
+                </div>
+              </div>
+
+              <div class="form-footer">
+                <button id="submit-btn" class="btn btn-primary" type="submit">Submit request</button>
+                <div class="micro-copy">
+                  We review requests manually before sending claim links or creating listings. Please do not submit the same request multiple times.
+                </div>
+              </div>
+
+              <div id="form-success" class="notice success" role="status" aria-live="polite">
+                Thanks. Your request has been submitted. Our team will review it and contact you on the provided number.
+              </div>
+
+              <div id="form-error" class="notice error" role="alert" aria-live="assertive"></div>
+            </form>
+          </div>
+
+          <div class="side-card">
+            <h3>What happens next?</h3>
+            <p>Once we receive your request, this is how we handle it.</p>
+
+            <div class="side-stack">
+              <div class="mini-panel">
+                <strong>If your business is already listed</strong>
+                <p>We review the request, match the listing, and send you the next step to claim it properly.</p>
+              </div>
+
+              <div class="mini-panel">
+                <strong>If your business is new</strong>
+                <p>We create the base listing first, then help you move ahead with the proper setup.</p>
+              </div>
+
+              <div class="mini-panel">
+                <strong>To reduce spam and misuse</strong>
+                <ul>
+                  <li>We review requests manually</li>
+                  <li>Claims may need proof before approval</li>
+                  <li>Wrong or suspicious requests may be rejected</li>
+                </ul>
+              </div>
+
+              <div class="mini-panel">
+                <strong>Need faster help?</strong>
+                <p>
+                  You can still contact our team directly on WhatsApp, LINE, or email if your case is urgent.
+                </p>
+                <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;">
+                  <a class="btn btn-secondary" href="https://wa.me/919602772207" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                  <a class="btn btn-secondary" href="https://line.me/R/ti/p/@464aczsl" target="_blank" rel="noopener noreferrer">LINE</a>
+                  <a class="btn btn-secondary" href="mailto:support@petzso.com?subject=PetzSo%20Business%20Support">Email</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Why claim your listing?</h2>
+          <p>
+            Wrong phone numbers, old timings, or incomplete details can make customers miss your business. Claiming your listing helps you take control of what pet parents see.
+          </p>
+        </div>
+
+        <div class="cards-3">
+          <article class="card">
+            <div class="card-icon">📍</div>
+            <h3>Show the right details</h3>
+            <p>Make sure pet parents see the correct phone number, address, timings, and business category.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🤝</div>
+            <h3>Build trust</h3>
+            <p>A better business profile helps customers understand what you offer and reach you with more confidence.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">⚡</div>
+            <h3>Get ready for more</h3>
+            <p>Once your listing is under your control, you can continue setup and get ready for services, products, and future bookings or orders.</p>
+          </article>
+        </div>
+
+        <div class="band">
+          <p>If your business details online are wrong, claim your PetzSo listing first. It is the fastest way to fix the basics and take control.</p>
+          <div class="band-actions">
+            <a class="btn btn-primary" href="#request">Send request now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>How it works</h2>
+          <p>A simple process to claim your listing or get your business started on PetzSo.</p>
+        </div>
+
+        <div class="cards-3">
+          <article class="card">
+            <div class="card-number">1</div>
+            <h3>Send the form</h3>
+            <p>Share your business name, city, phone number, and whether your business is already listed on PetzSo.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">2</div>
+            <h3>We review and help</h3>
+            <p>We check the request, match your business if already listed, and may ask for proof if needed.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">3</div>
+            <h3>Claim and continue</h3>
+            <p>Once approved, you can move ahead with your profile, add your first service or product, and manage your business on PetzSo Partner.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Who can join?</h2>
+          <p>PetzSo is for pet businesses that want to be discovered by local pet parents.</p>
+        </div>
+
+        <div class="cards-4">
+          <div class="category-chip">Groomers</div>
+          <div class="category-chip">Vets & Clinics</div>
+          <div class="category-chip">Pet Food Brands</div>
+          <div class="category-chip">Boarding & Daycare</div>
+          <div class="category-chip">Pet Taxi & Transport</div>
+          <div class="category-chip">Trainers</div>
+          <div class="category-chip">Walkers & Sitters</div>
+          <div class="category-chip">Pet Friendly Cafes & Venues</div>
+          <div class="category-chip">Other Pet Services</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>What we may ask for</h2>
+          <p>To keep business listings accurate and trustworthy, we may ask for proof before approving a claim or activating a profile.</p>
+        </div>
+
+        <div class="cards-3">
+          <article class="card">
+            <div class="card-icon">🪪</div>
+            <h3>Business proof</h3>
+            <p>Depending on your business type, this may include one or more of these:</p>
+            <ul class="proof-list">
+              <li>Registration, license, or GST document</li>
+              <li>Business card or branded invoice</li>
+              <li>Business lease agreement or owner ID</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📱</div>
+            <h3>Contact confirmation</h3>
+            <p>We may confirm the contact details linked to the business.</p>
+            <ul class="proof-list">
+              <li>Phone or WhatsApp number</li>
+              <li>Official business email, if available</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🌐</div>
+            <h3>Visible business presence</h3>
+            <p>If formal documents are not available, these can also help support verification.</p>
+            <ul class="proof-list">
+              <li>Instagram or other social profile</li>
+              <li>Google business presence, if available</li>
+              <li>Any other valid proof as needed</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>FAQ</h2>
+          <p>Quick answers before you claim or set up your business.</p>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>My business is already listed on PetzSo. How do I claim it?</summary>
+            <p>Send the request form with your business name, city, and phone number. Our team will review it, ask for proof if needed, and guide you through the next step.</p>
+          </details>
+
+          <details>
+            <summary>My business is not listed yet. Can I still join?</summary>
+            <p>Yes. If your business is not listed yet, we can help create your listing first and then help you claim and manage it properly.</p>
+          </details>
+
+          <details>
+            <summary>Do I need to download the app to get started?</summary>
+            <p>No. You can start on web through this request form. Once your listing is ready, you can use PetzSo Partner to manage your business faster.</p>
+          </details>
+
+          <details>
+            <summary>What if someone else tries to claim my business?</summary>
+            <p>We review claims carefully and may ask for proof before approving changes. This helps keep listings safe and accurate.</p>
+          </details>
+
+          <details>
+            <summary>I need help right now. How can I contact you?</summary>
+            <p>You can contact us on WhatsApp, LINE, or email. Our support details are given below.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contact-card">
+          <h2>Need help before sending the form?</h2>
+          <p>If your case is urgent or you are not sure what to select in the form, contact our team directly and we will guide you.</p>
+
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="https://wa.me/919602772207" target="_blank" rel="noopener noreferrer">Contact on WhatsApp</a>
+            <a class="btn btn-secondary" href="https://line.me/R/ti/p/@464aczsl" target="_blank" rel="noopener noreferrer">Contact on LINE</a>
+            <a class="btn btn-secondary" href="mailto:support@petzso.com?subject=PetzSo%20Business%20Support">Email support</a>
+          </div>
+
+          <div class="store-block">
+            <p class="store-label">Already approved or already using PetzSo Partner? Download the app to manage your business faster.</p>
+            <div class="store-row">
+              <a class="store-badge" href="https://apps.apple.com/us/app/petzso-partner/id6751159222" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                <img src="public/appstore-black.svg" alt="Download on the App Store" />
+              </a>
+              <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.petzso.partnerapp" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
+                <img src="public/googleplay.png" alt="Get it on Google Play" />
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-meta">
+            WhatsApp: +91 99583 16056 or +91 96027 72207 |
+            LINE: @464aczsl |
+            Email: support@petzso.com
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p class="site-footer-copy">© <span id="year"></span> PetzSo Partner. All rights reserved.</p>
+      <div class="site-footer-links">
+        <a href="partner-terms.html">Terms of Use (for businesses)</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta">
+    <a class="btn btn-primary" href="#request">Claim or set up my business</a>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const form = document.getElementById('business-request-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const successBox = document.getElementById('form-success');
+    const errorBox = document.getElementById('form-error');
+    const startedAtField = document.getElementById('form-started-at');
+    const submittedAtField = document.getElementById('submitted-at-field');
+    const cooldownKey = 'petzso_partner_form_last_submit';
+    const now = Date.now();
+    startedAtField.value = String(now);
+
+    function showError(message) {
+      errorBox.textContent = message;
+      errorBox.className = 'notice error show';
+      successBox.className = 'notice success';
+    }
+
+    function showSuccess(message) {
+      successBox.textContent = message;
+      successBox.className = 'notice success show';
+      errorBox.className = 'notice error';
+    }
+
+    function clearMessages() {
+      errorBox.className = 'notice error';
+      successBox.className = 'notice success';
+    }
+
+    function sanitizePhone(value) {
+      return value.replace(/[^0-9+\-()\s]/g, '').trim();
+    }
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      clearMessages();
+
+      const lastSubmit = Number(localStorage.getItem(cooldownKey) || '0');
+      const elapsedSinceStart = Date.now() - Number(startedAtField.value || Date.now());
+
+      if (lastSubmit && Date.now() - lastSubmit < 60000) {
+        showError('Please wait for a minute before sending another request.');
+        return;
+      }
+
+      if (elapsedSinceStart < 4000) {
+        showError('Please take a moment to review the form before submitting.');
+        return;
+      }
+
+      const businessName = form.business_name.value.trim();
+      const city = form.city.value.trim();
+      const contactName = form.contact_name.value.trim();
+      const phone = sanitizePhone(form.phone.value);
+      const businessType = form.business_type.value;
+      const listed = form.already_listed.value;
+
+      form.phone.value = phone;
+
+      if (!businessName || !city || !contactName || !phone || !businessType || !listed) {
+        showError('Please fill all required fields before submitting.');
+        return;
+      }
+
+      const digitCount = (phone.match(/\d/g) || []).length;
+      if (digitCount < 10) {
+        showError('Please enter a valid phone number.');
+        return;
+      }
+
+      const notesLength = (form.notes.value || '').trim().length;
+      const descriptionLength = (form.description.value || '').trim().length;
+      if (notesLength > 800 || descriptionLength > 600) {
+        showError('Please shorten the text in the description or notes fields.');
+        return;
+      }
+
+      submittedAtField.value = new Date().toISOString();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          localStorage.setItem(cooldownKey, String(Date.now()));
+          form.reset();
+          startedAtField.value = String(Date.now());
+          submittedAtField.value = '';
+          showSuccess('Thanks. Your request has been submitted. Our team will review it and contact you on your provided number.');
+        } else {
+          showError(result.message || 'Something went wrong. Please try again or contact support.');
+        }
+      } catch (error) {
+        showError('We could not submit your request right now. Please try again or contact support.');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit request';
+      }
+    });
+  </script>
+</body>
+</html>
