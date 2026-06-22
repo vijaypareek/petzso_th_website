@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.petzso-thailand.com/sitemap.xml
+Sitemap: https://petzso-thailand.com/sitemap.xml
